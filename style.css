@@ -1,0 +1,82 @@
+:root {
+    --gold: #f9d71c;
+    --deep-blue: #050b1a;
+}
+
+body, html {
+    margin: 0; padding: 0; height: 100%;
+    background: var(--deep-blue);
+    color: white; overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#paint-canvas {
+    position: fixed; top: 0; left: 0; z-index: 1;
+}
+
+.scene {
+    position: relative; z-index: 10;
+    height: 100vh; width: 100vw;
+    display: flex; justify-content: center; align-items: center;
+    perspective: 1000px;
+}
+
+/* O Cartão com Efeito Parallax */
+.museum-card {
+    width: 400px;
+    background: rgba(10, 25, 47, 0.8);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(249, 215, 28, 0.2);
+    padding: 30px;
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+    opacity: 0.5; /* Começa apagado */
+}
+
+.art-frame {
+    position: relative; border: 8px solid #1a1a1a;
+    height: 350px; overflow: hidden;
+}
+
+.photo-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: black; opacity: 0.9; transition: 2s; z-index: 2;
+}
+
+.main-photo { width: 100%; height: 100%; object-fit: cover; }
+
+/* Stitch e Interatividade */
+.stitch-container {
+    position: absolute; bottom: 30px; left: 30px;
+    cursor: pointer; text-align: center;
+}
+
+#stitch { width: 100px; transition: 0.3s; }
+
+.speech-bubble {
+    background: white; color: black; padding: 5px 10px;
+    border-radius: 10px; font-size: 12px; font-weight: bold;
+    margin-bottom: 5px; animation: bounce 2s infinite;
+}
+
+@keyframes bounce { 0%, 100% {transform: translateY(0);} 50% {transform: translateY(-5px);} }
+
+#star-drag {
+    position: absolute; top: 50px; right: 50px;
+    font-size: 50px; cursor: grab; z-index: 100;
+    filter: drop-shadow(0 0 15px var(--gold));
+}
+
+#interaction-hint {
+    position: absolute; top: 20px; width: 100%; text-align: center;
+    color: var(--gold); font-family: 'Cinzel Decorative'; letter-spacing: 2px;
+}
+
+/* Tipografia */
+.vg-title { font-family: 'Cinzel Decorative'; color: var(--gold); margin-top: 20px; }
+.handwritten { font-family: 'Dancing Script'; font-size: 2rem; color: var(--gold); }
+.hidden { display: none; opacity: 0; }
+.visible { display: block; animation: fadeIn 2s forwards; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }

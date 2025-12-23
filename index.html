@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Minha Princesa | Experiência Imersiva</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Dancing+Script:wght@700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="cursor-glow" id="cursor"></div>
+    <canvas id="paint-canvas"></canvas>
+
+    <main class="scene">
+        <div class="stitch-container" onclick="stitchLove()">
+            <img src="https://media.tenor.com/y296_BAr6vQAAAAi/stitch-lilo-and-stitch.gif" alt="Stitch" id="stitch">
+            <div class="speech-bubble">Clica em mim! ❤️</div>
+        </div>
+
+        <div id="interaction-hint">Arraste a Estrela Dourada para o quadro ✨</div>
+        <div id="star-drag" draggable="true">☀️</div>
+
+        <section class="museum-card" id="card">
+            <div class="card-inner">
+                <div class="art-frame">
+                    <div class="photo-overlay" id="overlay"></div>
+                    <img src="img/ela.jpg" alt="Obra de Arte" class="main-photo">
+                </div>
+
+                <div class="content-text">
+                    <h1 class="vg-title">Minha Obra Prima</h1>
+                    <div id="secret-message" class="hidden">
+                        <p class="handwritten">Para a minha princesa...</p>
+                        <p class="text-body">
+                            Van Gogh levou uma vida inteira para pintar a beleza, 
+                            eu só precisei de um segundo para ver que ela vive em você.
+                        </p>
+                        <span class="date">26 . 12 . 2025</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
